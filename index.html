@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sri Srinivasan · Technical Programme Leader</title>
+<meta name="description" content="Sri Srinivasan: technical programme leader across Apple Music, Amazon Prime Video and Ocado, now building agentic AI tools.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b1220;--bg2:#101a2e;--card:rgba(255,255,255,.045);--line:rgba(148,163,184,.18);
+  --ink:#e8edf5;--muted:#9aa8bd;--pink:#4f8cff;--violet:#3d5afe;--cyan:#2cb1a6;--lime:#3fae7f;--amber:#d4a24c;--bad:#e5735a;
+  --display:"Space Grotesk",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif;color-scheme:dark}
+:root[data-theme="light"]{--bg:#f6f8fb;--bg2:#ffffff;--card:rgba(255,255,255,.85);--line:rgba(15,23,42,.12);--ink:#0f172a;--muted:#526077;--pink:#1f5fd6;--violet:#2f43c9;--cyan:#13877e;--lime:#23825a;--amber:#a87a24;color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--body);overflow-x:hidden}
+a{color:inherit}
+.blobs{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.blob{position:absolute;width:46vmax;height:46vmax;border-radius:50%;filter:blur(90px);opacity:.16;animation:float 22s ease-in-out infinite}
+.b1{background:var(--violet);top:-15vmax;left:-10vmax}
+.b2{background:var(--pink);bottom:-20vmax;right:-12vmax;animation-delay:-7s}
+.b3{background:var(--cyan);top:30vh;left:45vw;width:30vmax;height:30vmax;opacity:.1;animation-delay:-13s}
+:root[data-theme="light"] .blob{opacity:.1}
+@keyframes float{50%{transform:translate(6vmax,4vmax) scale(1.12)}}
+.cursor-glow{position:fixed;width:340px;height:340px;border-radius:50%;pointer-events:none;z-index:-1;background:radial-gradient(circle,rgba(79,140,255,.12),transparent 65%);transform:translate(-50%,-50%);transition:opacity .3s}
+nav.top{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px max(16px,4vw);backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom:1px solid var(--line)}
+.logo{font-family:var(--display);font-weight:700;font-size:1.15rem;text-decoration:none;background:linear-gradient(90deg,var(--pink),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.navlinks{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.navlinks a{text-decoration:none;font-weight:500;font-size:.92rem;padding:6px 10px;border-radius:999px;color:var(--muted)}
+.navlinks a:hover{color:var(--ink);background:var(--card)}
+#theme{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;width:38px;height:38px;cursor:pointer;font-size:1rem}
+main{max-width:1100px;margin:0 auto;padding:0 16px}
+section{padding:72px 0}
+.hero{min-height:82vh;display:flex;flex-direction:column;justify-content:center;gap:22px}
+.eyebrow{font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;color:var(--cyan)}
+h1{font-family:var(--display);font-size:clamp(2.4rem,7vw,5rem);line-height:1.02;margin:0;letter-spacing:-.02em}
+h1 .grad{background:linear-gradient(90deg,var(--pink),var(--cyan) 50%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.rotator{font-family:var(--display);font-size:clamp(1.2rem,3vw,1.8rem);color:var(--muted);min-height:1.4em}
+.rotator b{color:var(--ink);border-right:3px solid var(--cyan);padding-right:4px}
+.lead{max-width:640px;font-size:1.1rem;color:var(--muted);margin:0}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;text-decoration:none;padding:12px 20px;border-radius:999px;border:1px solid var(--line);background:var(--card);transition:transform .2s,box-shadow .2s}
+.btn.primary{border:0;background:var(--pink);color:#fff;box-shadow:0 10px 26px -14px var(--pink)}
+.btn:hover{transform:translateY(-3px)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:10px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;backdrop-filter:blur(8px)}
+.stat b{display:block;font-family:var(--display);font-size:2rem;line-height:1.1}
+.stat span{color:var(--muted);font-size:.88rem}
+.stat:nth-child(1) b{color:var(--pink)}.stat:nth-child(2) b{color:var(--cyan)}.stat:nth-child(3) b{color:var(--lime)}.stat:nth-child(4) b{color:var(--amber)}
+h2{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 8px;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 28px;max-width:620px}
+.appstat{align-self:flex-start;display:flex;align-items:center;gap:14px;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 20px;backdrop-filter:blur(8px);transition:transform .2s,border-color .2s}
+.appstat:hover{transform:translateY(-3px);border-color:var(--amber)}
+.appstat b{font-family:var(--display);font-size:2.4rem;line-height:1;color:var(--amber)}
+.appstat span{color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.skill{all:unset;box-sizing:border-box;cursor:pointer;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:8px;padding:22px;border-radius:20px;background:var(--card);border:1px solid var(--line);backdrop-filter:blur(8px);min-height:210px;transition:transform .25s,border-color .25s,box-shadow .25s}
+.skill::before{content:"";position:absolute;inset:auto -30% -60% auto;width:180px;height:180px;border-radius:50%;background:var(--c);opacity:.18;filter:blur(30px);transition:opacity .3s,transform .4s}
+.skill:hover,.skill.open{transform:translateY(-4px);border-color:var(--c);box-shadow:0 18px 40px -22px var(--c)}
+.skill:hover::before,.skill.open::before{opacity:.4;transform:scale(1.4)}
+.skill:focus-visible{outline:2px solid var(--c);outline-offset:3px}
+.skill .ico{font-size:1.8rem}
+.skill h3{margin:0;font-family:var(--display);font-size:1.2rem;color:var(--c)}
+.skill .what{margin:0;font-weight:500}
+.skill .proof{margin:0;color:var(--muted);font-size:.92rem;max-height:0;opacity:0;overflow:hidden;transition:max-height .4s,opacity .4s}
+.skill:hover .proof,.skill.open .proof{max-height:160px;opacity:1}
+.li-pill{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:600;font-size:.88rem;padding:7px 12px;border-radius:999px;background:#0a66c2;color:#fff!important}
+.li-pill:hover{background:#004182}
+.li-btn{border-color:#0a66c2}
+.li-btn:hover{background:#0a66c2;color:#fff}
+/* timeline */
+.timeline{display:flex;flex-direction:column;gap:12px;position:relative}
+.role{border:1px solid var(--line);background:var(--card);border-radius:18px;overflow:hidden;backdrop-filter:blur(8px)}
+.role button{all:unset;cursor:pointer;display:grid;grid-template-columns:14px 1fr auto;gap:16px;align-items:center;width:100%;box-sizing:border-box;padding:18px 20px}
+.role button:focus-visible{outline:2px solid var(--cyan);outline-offset:-2px;border-radius:18px}
+.dot{width:14px;height:14px;border-radius:50%;background:var(--c);box-shadow:0 0 0 5px color-mix(in srgb,var(--c) 25%,transparent)}
+.role h3{margin:0;font-family:var(--display);font-size:1.15rem}
+.role .org{color:var(--muted);font-size:.92rem}
+.when{font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.role .detail{max-height:0;overflow:hidden;transition:max-height .4s ease;padding:0 20px 0 50px}
+.role.open .detail{max-height:200px;padding-bottom:18px}
+.role.open{border-color:var(--c)}
+.detail p{margin:0;color:var(--muted)}
+.chip{display:inline-block;margin:10px 6px 0 0;font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:999px;border:1px solid var(--c);color:var(--c)}
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.proj{position:relative;border-radius:24px;padding:2px;background:linear-gradient(140deg,var(--a),var(--b));transform-style:preserve-3d;transition:transform .15s ease-out;will-change:transform}
+.proj .in{background:var(--bg2);border-radius:22px;padding:22px;height:100%;display:flex;flex-direction:column;gap:14px}
+.proj h3{margin:0;font-family:var(--display);font-size:1.4rem}
+.proj p{margin:0;color:var(--muted)}
+.badge{align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:linear-gradient(90deg,var(--a),var(--b));color:#fff}
+.demo{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px;min-height:190px}
+.demo .lbl{font-size:.75rem;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.go{margin-top:auto;align-self:flex-start}
+.note{font-size:.8rem;color:var(--muted)}
+/* shopping demo */
+.shopform{display:flex;gap:8px}
+.shopform input{flex:1;min-width:0;font:inherit;padding:9px 12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.shopform button,.qopt,.flip-btn{font:inherit;font-weight:600;border:0;border-radius:12px;padding:9px 14px;cursor:pointer;color:#fff;background:linear-gradient(90deg,var(--a),var(--b))}
+.shops{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.shop{border:1px dashed var(--line);border-radius:12px;padding:8px;font-size:.8rem;min-height:72px}
+.shop strong{display:block;font-size:.78rem;margin-bottom:4px}
+.item{display:inline-block;background:var(--a);color:#fff;font-weight:600;border-radius:8px;padding:2px 7px;margin:2px;animation:pop .4s ease}
+@keyframes pop{from{transform:scale(.3);opacity:0}}
+/* jp quiz */
+.jp{font-family:"Noto Sans JP",sans-serif;font-weight:700}
+.sentence{font-size:1.5rem;text-align:center}
+.blank{display:inline-block;min-width:2em;border-bottom:3px solid var(--b);color:var(--b)}
+.qopts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.qopt{font-family:"Noto Sans JP",sans-serif;font-size:1.2rem;min-width:56px;background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.qopt.ok{background:var(--lime);color:#fff}.qopt.no{background:var(--bad,#c2410c);color:#fff}
+.fb{text-align:center;font-size:.9rem;min-height:1.4em;color:var(--muted)}
+/* flip card */
+.flip{perspective:900px;flex:1;min-height:120px;cursor:pointer}
+.flip .face{position:absolute;inset:0;border-radius:14px;padding:14px;display:flex;align-items:center;justify-content:center;text-align:center;backface-visibility:hidden;transition:transform .6s;font-weight:600}
+.flip .inner{position:relative;height:100%;min-height:120px}
+.flip .front{background:linear-gradient(140deg,color-mix(in srgb,var(--a) 30%,transparent),color-mix(in srgb,var(--b) 30%,transparent))}
+.flip .back{background:var(--bg);border:1px solid var(--line);transform:rotateY(180deg);font-weight:500;font-size:.92rem}
+.flip.flipped .front{transform:rotateY(-180deg)}.flip.flipped .back{transform:rotateY(0)}
+.flip-row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+/* about strip */
+.marquee{overflow:hidden;border-block:1px solid var(--line);padding:16px 0;margin:20px 0}
+.marquee div{display:flex;gap:40px;width:max-content;animation:scroll 30s linear infinite;font-family:var(--display);font-size:1.3rem;color:var(--muted)}
+.marquee span::before{content:"✦ ";color:var(--cyan)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+footer{text-align:center;padding:48px 16px 64px;color:var(--muted)}
+footer .links{display:flex;justify-content:center;gap:12px;margin-top:14px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media (max-width:620px){.navlinks a.hide-sm,.navlinks a[href="#build"]{display:none}.logo{white-space:nowrap}.role button{grid-template-columns:14px 1fr}.when{grid-column:2}.role .detail{padding-left:20px}.shops{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="blobs" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+<div class="cursor-glow" id="glow" aria-hidden="true"></div>
+
+<nav class="top">
+  <a class="logo" href="#top">Sri Srinivasan</a>
+  <div class="navlinks">
+    <a href="#skills" class="hide-sm">Skills</a>
+    <a href="#career" class="hide-sm">Career</a>
+    <a href="#build">What I build</a>
+    <a href="#contact" class="hide-sm">Contact</a>
+    <a class="li-pill" href="https://www.linkedin.com/in/srizz" target="_blank" rel="noopener" aria-label="LinkedIn profile (opens in a new tab)"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+    <button id="theme" type="button" aria-label="Switch light or dark theme">☀</button>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="hero">
+    <span class="eyebrow">Technical Programme Leader · London</span>
+    <h1>I turn fuzzy ideas into <span class="grad">things that ship.</span></h1>
+    <div class="rotator" aria-live="polite">Lately I've been <b id="rot">building with AI</b></div>
+    <p class="lead">15+ years leading complex technology programmes at Apple Music, Amazon Prime Video and Ocado. Now I build small, useful AI-powered apps, and help teams put AI to work safely.</p>
+    <div class="ctas">
+      <a class="btn primary" href="#build">See what I've built →</a>
+      <a class="btn" href="#career">My career</a>
+      <a class="btn li-btn" href="https://www.linkedin.com/in/srizz" target="_blank" rel="noopener">Connect on LinkedIn ↗</a>
+    </div>
+    <a class="appstat reveal" href="#build"><b data-count="3" data-suffix="">0</b><span>Recent AI Apps Live. Try them below →</span></a>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div>
+    <span>Programme leadership</span><span>Platform migrations</span><span>Customer launches</span><span>Agentic AI</span><span>Rapid prototyping</span><span>Mechanisms that outlast me</span>
+    <span>Programme leadership</span><span>Platform migrations</span><span>Customer launches</span><span>Agentic AI</span><span>Rapid prototyping</span><span>Mechanisms that outlast me</span>
+  </div></div>
+
+  <section id="skills">
+    <h2 class="reveal">What I bring</h2>
+    <p class="sub reveal">Hover or tap a card to see it in action.</p>
+    <div class="skills">
+      <button class="skill reveal" style="--c:var(--pink)" type="button" aria-expanded="false"><span class="ico">🧩</span><h3>Problem solving</h3><p class="what">Making messy, ambiguous problems clear enough to act on.</p><p class="proof">At Ocado, I sorted ~250 APIs into "works", "needs adapting" and "missing". A vague worry became a clear plan, and the method became standard for every new retailer.</p></button>
+      <button class="skill reveal" style="--c:var(--violet)" type="button" aria-expanded="false"><span class="ico">🚀</span><h3>Product development</h3><p class="what">From first concept to something real people use.</p><p class="proof">I took a knowledge platform from a free proof of concept to live use at two UK banks, and I've since built three AI apps of my own.</p></button>
+      <button class="skill reveal" style="--c:var(--cyan)" type="button" aria-expanded="false"><span class="ico">🤝</span><h3>Client engagement</h3><p class="what">Becoming the partner customers trust to get it done.</p><p class="proof">I helped a Canadian grocer launch one of the country's first online grocery services, on the date that had been promised.</p></button>
+      <button class="skill reveal" style="--c:var(--lime)" type="button" aria-expanded="false"><span class="ico">🗺️</span><h3>Roadmap & strategy</h3><p class="what">Choosing what matters most, and what to say no to.</p><p class="proof">At Apple, I made the case to pause new features and fix our platform. Services ended up roughly 70% faster.</p></button>
+      <button class="skill reveal" style="--c:var(--amber)" type="button" aria-expanded="false"><span class="ico">⚙️</span><h3>Programme leadership</h3><p class="what">Keeping many teams moving towards one outcome.</p><p class="proof">I've led programmes across four countries and set up delivery routines at Amazon that other teams adopted.</p></button>
+      <button class="skill reveal" style="--c:var(--pink)" type="button" aria-expanded="false"><span class="ico">✨</span><h3>AI in practice</h3><p class="what">Using AI to build, prototype and move faster.</p><p class="proof">I design and ship working AI apps in days, and help shape an agentic AI platform for regulated organisations.</p></button>
+    </div>
+  </section>
+
+  <section id="career">
+    <h2 class="reveal">Career at a glance</h2>
+    <p class="sub reveal">Tap a role to see the highlight.</p>
+    <div class="timeline">
+      <div class="role reveal" style="--c:var(--lime)"><button aria-expanded="false"><span class="dot"></span><span><h3>Product Consultant, Agentic AI</h3><span class="org">enMorf · 1Tellect</span></span><span class="when">2026 – now</span></button>
+        <div class="detail"><p>Shaping an agentic AI platform that helps regulated organisations turn their knowledge into governed, auditable AI workflows.</p><span class="chip">Agentic AI</span><span class="chip">Product strategy</span></div></div>
+      <div class="role reveal" style="--c:var(--pink)"><button aria-expanded="false"><span class="dot"></span><span><h3>Technical Program Manager</h3><span class="org">Apple Music</span></span><span class="when">2022 – 2026</span></button>
+        <div class="detail"><p>Led platform, infrastructure and data programmes across four countries, including moving 40+ applications to edge locations for up to 80% faster responses.</p><span class="chip">Platform</span><span class="chip">Data</span><span class="chip">Global teams</span></div></div>
+      <div class="role reveal" style="--c:var(--cyan)"><button aria-expanded="false"><span class="dot"></span><span><h3>Senior Technical Program Manager</h3><span class="org">Amazon Prime Video</span></span><span class="when">2021 – 2022</span></button>
+        <div class="detail"><p>Ran engineering programmes for Prime Video's Watch and Buy experience. The delivery routines I set up became standard practice across teams.</p><span class="chip">Consumer scale</span><span class="chip">Mechanisms</span></div></div>
+      <div class="role reveal" style="--c:var(--amber)"><button aria-expanded="false"><span class="dot"></span><span><h3>Solution Architect & Product Launch Manager</h3><span class="org">Ocado Solutions</span></span><span class="when">2018 – 2021</span></button>
+        <div class="detail"><p>Helped launch one of Canada's first online grocery services. My gap-analysis and launch processes became standard for every new retailer.</p><span class="chip">Customer launches</span><span class="chip">Retail</span></div></div>
+      <div class="role reveal" style="--c:var(--violet)"><button aria-expanded="false"><span class="dot"></span><span><h3>Technical Account & Delivery Manager</h3><span class="org">Portaltech Reply</span></span><span class="when">2015 – 2017</span></button>
+        <div class="detail"><p>Delivered e-commerce platforms for clients including Costco and Iceland Foods, managing a portfolio of about £2.5m.</p><span class="chip">Clients</span><span class="chip">Commercial</span></div></div>
+      <div class="role reveal" style="--c:var(--pink)"><button aria-expanded="false"><span class="dot"></span><span><h3>Programme Manager & Consultant</h3><span class="org">Amsphere</span></span><span class="when">Earlier</span></button>
+        <div class="detail"><p>Built a knowledge platform from a free proof of concept into a multi-million-pound relationship with two UK banks.</p><span class="chip">Product build</span><span class="chip">Banking</span></div></div>
+    </div>
+  </section>
+
+  <section id="build">
+    <h2 class="reveal">What I build</h2>
+    <p class="sub reveal">Small, real apps I've designed and shipped with AI. Try the mini demos right here.</p>
+    <div class="projects">
+
+      <article class="proj reveal" style="--a:#13877e;--b:#2cb1a6">
+        <div class="in">
+          <span class="badge">Agentic AI · WhatsApp</span>
+          <h3>ShoppingSync</h3>
+          <p>A family shopping list that lives in WhatsApp. Everyone types what they need, in their own words, and an AI agent sorts each item under the right shop.</p>
+          <div class="demo">
+            <span class="lbl">Try it: add an item</span>
+            <form class="shopform" id="shopform"><label class="sr" for="shopin" style="position:absolute;left:-9999px">Item</label><input id="shopin" placeholder="e.g. paneer, light bulbs, bread" autocomplete="off"><button>Add</button></form>
+            <div class="shops">
+              <div class="shop"><strong>🥬 Supermarket</strong><span id="s-super"></span></div>
+              <div class="shop"><strong>🌶️ Indian grocer</strong><span id="s-indian"></span></div>
+              <div class="shop"><strong>🔧 Hardware</strong><span id="s-hard"></span></div>
+            </div>
+          </div>
+          <a class="btn primary go" href="https://shopping-sync.vercel.app/use-me" target="_blank" rel="noopener">See how it works →</a>
+        </div>
+      </article>
+
+      <article class="proj reveal" style="--a:#2f43c9;--b:#4f8cff">
+        <div class="in">
+          <span class="badge">Learning · Japanese</span>
+          <h3>N5 Drill</h3>
+          <p>A JLPT N5 practice app covering kana, kanji, vocabulary, particles, grammar, reading and listening, with progress tracking and a shared leaderboard.</p>
+          <div class="demo">
+            <span class="lbl">Try it: pick the particle</span>
+            <div class="sentence jp" lang="ja" id="jpq"></div>
+            <div class="qopts" id="jpopts"></div>
+            <div class="fb" id="jpfb" aria-live="polite"></div>
+          </div>
+          <a class="btn primary go" href="https://n5-particle-drill.vercel.app/" target="_blank" rel="noopener">Open N5 Drill →</a>
+          <span class="note">Sign-in required. Ask me for access.</span>
+        </div>
+      </article>
+
+      <article class="proj reveal" style="--a:#1f5fd6;--b:#2cb1a6">
+        <div class="in">
+          <span class="badge">Learning · AI architecture</span>
+          <h3>CCAR Study Hub</h3>
+          <p>My study kit for the Claude Certified Architect exam: a daily plan, notes, flashcards, timed mock exams and domain drills, all built around how I learn.</p>
+          <div class="demo">
+            <span class="lbl">Try it: tap the card</span>
+            <div class="flip" id="flip" role="button" tabindex="0" aria-label="Flashcard, tap to flip"><div class="inner"><div class="face front" id="ffront"></div><div class="face back" id="fback"></div></div></div>
+            <div class="flip-row"><span class="note" id="fcount"></span><button class="flip-btn" id="fnext" type="button">Next card</button></div>
+          </div>
+          <a class="btn primary go" href="https://ccar-study-hub.vercel.app/" target="_blank" rel="noopener">Open Study Hub →</a>
+          <span class="note">Private study material. Sign-in required.</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="contact" class="reveal" style="text-align:center">
+    <h2>Let's talk</h2>
+    <p class="sub" style="margin-inline:auto">Looking for someone who can lead complex technology delivery, stay close to customers and put AI to real use? I'd love to hear from you.</p>
+    <div class="ctas" style="justify-content:center">
+      <a class="btn primary" href="https://www.linkedin.com/in/srizz" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      <a class="btn" href="https://github.com/srisriz" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="yr"></span> Sri Srinivasan · Built with Claude, hosted on Vercel</footer>
+
+<script>
+const $=s=>document.querySelector(s);
+$('#yr').textContent=new Date().getFullYear();
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// theme
+const root=document.documentElement;
+try{const t=localStorage.getItem('theme');if(t)root.dataset.theme=t}catch(e){}
+const setIcon=()=>$('#theme').textContent=root.dataset.theme==='light'?'☾':'☀';setIcon();
+$('#theme').onclick=()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}setIcon()};
+
+// cursor glow
+const glow=$('#glow');addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
+
+// rotator
+const words=['building with AI','shipping prototypes','learning Japanese','studying for CCAR-P','solving delivery puzzles'];
+let wi=0;if(!reduce)setInterval(()=>{wi=(wi+1)%words.length;const b=$('#rot');let t=words[wi],i=0;b.textContent='';const iv=setInterval(()=>{b.textContent=t.slice(0,++i);if(i>=t.length)clearInterval(iv)},45)},2800);
+
+// reveal + counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');const n=e.target.querySelector('[data-count]');if(n&&!n.done){n.done=1;const end=+n.dataset.count,suf=n.dataset.suffix;let s=null;const step=t=>{s??=t;const p=Math.min(1,(t-s)/1200);n.textContent=Math.round(end*(1-Math.pow(1-p,3)))+suf;if(p<1)requestAnimationFrame(step)};reduce?n.textContent=end+suf:requestAnimationFrame(step)}io.unobserve(e.target)}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// skills tap
+document.querySelectorAll('.skill').forEach(s=>s.onclick=()=>{const o=!s.classList.contains('open');s.classList.toggle('open',o);s.setAttribute('aria-expanded',o)});
+// timeline
+document.querySelectorAll('.role button').forEach(b=>b.onclick=()=>{const r=b.parentElement,open=!r.classList.contains('open');r.classList.toggle('open',open);b.setAttribute('aria-expanded',open)});
+document.querySelector('.role').classList.add('open');document.querySelector('.role button').setAttribute('aria-expanded','true');
+
+// tilt
+if(!reduce&&matchMedia('(hover:hover)').matches)document.querySelectorAll('.proj').forEach(c=>{c.onpointermove=e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(900px) rotateY(${x*8}deg) rotateX(${-y*8}deg)`};c.onpointerleave=()=>c.style.transform=''});
+
+// shopping demo
+const indian=['paneer','dal','atta','ghee','curry leaves','masala','rice','chilli','jaggery','coriander','methi','idli','dosa','toor','urad'];
+const hard=['bulb','light','battery','batteries','screw','nail','tape','glue','paint','hammer','fuse','plug','drill','hose'];
+const add=(id,t)=>{const s=document.createElement('span');s.className='item';s.textContent=t;$(id).appendChild(s)};
+['milk','bread'].forEach(t=>add('#s-super',t));add('#s-indian','paneer');add('#s-hard','light bulbs');
+$('#shopform').onsubmit=e=>{e.preventDefault();const v=$('#shopin').value.trim().slice(0,30);if(!v)return;const l=v.toLowerCase();
+ add(indian.some(k=>l.includes(k))?'#s-indian':hard.some(k=>l.includes(k))?'#s-hard':'#s-super',v);$('#shopin').value=''};
+
+// japanese demo
+const qs=[{s:['わたし','___','がくせいです。'],a:'は',o:['は','を','に','で'],en:'I am a student.'},
+{s:['パン','___','たべます。'],a:'を',o:['が','を','へ','と'],en:'I eat bread.'},
+{s:['がっこう','___','いきます。'],a:'へ',o:['を','で','へ','も'],en:'I go to school.'},
+{s:['としょかん','___','べんきょうします。'],a:'で',o:['に','で','を','は'],en:'I study at the library.'},
+{s:['ともだち','___','えいがをみます。'],a:'と',o:['と','を','が','の'],en:'I watch a film with a friend.'}];
+let qi=0;function showQ(){const q=qs[qi];$('#jpq').innerHTML=q.s.map(p=>p==='___'?'<span class="blank">　</span>':p).join('');$('#jpfb').textContent='';
+ const o=$('#jpopts');o.innerHTML='';q.o.forEach(c=>{const b=document.createElement('button');b.className='qopt';b.type='button';b.textContent=c;b.onclick=()=>{
+  const ok=c===q.a;b.classList.add(ok?'ok':'no');if(ok){$('#jpq .blank').textContent=c;$('#jpfb').textContent='正解! '+q.en;setTimeout(()=>{qi=(qi+1)%qs.length;showQ()},1600)}else $('#jpfb').textContent='Not quite, try again.'};o.appendChild(b)})}
+showQ();
+
+// flashcards
+const cards=[['What is an agentic loop?','The model plans, calls a tool, reads the result and decides the next step, until the task is done.'],
+['When should a human stay in the loop?','When an action is hard to undo, high-impact, or the model is unsure. Keep approval steps there.'],
+['Why use prompt caching?','Reusing a long, stable prompt prefix cuts cost and latency on repeat calls.'],
+['What makes a good tool description?','Say what it does, when to use it, and what each input means, in plain words.']];
+let ci=0;const fl=$('#flip');function showC(){fl.classList.remove('flipped');setTimeout(()=>{$('#ffront').textContent=cards[ci][0];$('#fback').textContent=cards[ci][1];$('#fcount').textContent=`Card ${ci+1} of ${cards.length}`},reduce?0:200)}
+fl.onclick=()=>fl.classList.toggle('flipped');fl.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();fl.classList.toggle('flipped')}};
+$('#fnext').onclick=()=>{ci=(ci+1)%cards.length;showC()};showC();
+</script>
+</body>
+</html>
