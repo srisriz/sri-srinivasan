@@ -114,6 +114,19 @@ h2{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 8px;
 .made{margin:0;font-size:.88rem;color:var(--muted);display:grid;gap:4px}
 .made b{color:var(--ink);font-weight:600}
 .note{font-size:.8rem;color:var(--muted)}
+/* screen slideshows */
+.slides{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--bg)}
+.slides .track{display:flex;transition:transform .45s ease}
+.slides figure{margin:0;flex:0 0 100%;min-width:0;position:relative}
+.slides img{display:block;width:100%;height:auto;aspect-ratio:12/7;object-fit:cover;object-position:top}
+.slides figure a{display:block;cursor:zoom-in}
+.slides figcaption{pointer-events:none;position:absolute;left:0;right:0;bottom:0;padding:22px 12px 9px;font-size:.8rem;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(5,9,18,.85))}
+.slides .nav{position:absolute;top:calc(50% - 30px);width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(5,9,18,.6);color:#fff;font-size:1rem;cursor:pointer;display:grid;place-items:center}
+.slides .prev{left:8px}.slides .next{right:8px}
+.slides .nav:focus-visible,.dots button:focus-visible{outline:2px solid var(--b);outline-offset:2px}
+.dots{display:flex;gap:6px;justify-content:center;margin-top:8px}
+.dots button{width:8px;height:8px;padding:0;border-radius:50%;border:0;background:var(--line);cursor:pointer}
+.dots button[aria-current="true"]{background:var(--b);width:20px;border-radius:999px}
 /* shopping demo */
 .shopform{display:flex;gap:8px}
 .shopform input{flex:1;min-width:0;font:inherit;padding:9px 12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
@@ -250,6 +263,14 @@ footer .links{display:flex;justify-content:center;gap:12px;margin-top:14px;flex-
           <h3>N5 Drill</h3>
           <p>A JLPT N5 practice app covering kana, kanji, vocabulary, particles, grammar, reading and listening, with progress tracking and a shared leaderboard.</p>
           <p class="made"><span><b>My part:</b> designed and built around how I study, with Claude as my coding partner.</span></p>
+          <div class="shots" data-slides>
+            <div class="slides" role="region" aria-roledescription="carousel" aria-label="N5 Drill screens">
+              <div class="track"><figure><a href="/shots/n5-sections.webp" target="_blank" rel="noopener" aria-label="Open full size: N5 Drill home: eleven practice sections from particles to listening, with question counts"><img src="/shots/n5-sections.webp" alt="N5 Drill home: eleven practice sections from particles to listening, with question counts" loading="lazy" width="1200" height="700"></a><figcaption>Eleven sections, 3,600+ questions</figcaption></figure><figure><a href="/shots/n5-quiz.webp" target="_blank" rel="noopener" aria-label="Open full size: N5 Drill quiz: fill-in-the-particle questions with a timer and progress bar"><img src="/shots/n5-quiz.webp" alt="N5 Drill quiz: fill-in-the-particle questions with a timer and progress bar" loading="lazy" width="1200" height="700"></a><figcaption>A timed particle paper</figcaption></figure><figure><a href="/shots/n5-lookup.webp" target="_blank" rel="noopener" aria-label="Open full size: N5 Drill lookup panel explaining when to use each particle, with examples"><img src="/shots/n5-lookup.webp" alt="N5 Drill lookup panel explaining when to use each particle, with examples" loading="lazy" width="1200" height="700"></a><figcaption>Built-in particle lookup</figcaption></figure></div>
+              <button class="nav prev" type="button" aria-label="Previous screen">‹</button>
+              <button class="nav next" type="button" aria-label="Next screen">›</button>
+            </div>
+            <div class="dots"></div>
+          </div>
           <div class="demo">
             <span class="lbl">Try it: pick the particle</span>
             <div class="sentence jp" lang="ja" id="jpq"></div>
@@ -257,7 +278,7 @@ footer .links{display:flex;justify-content:center;gap:12px;margin-top:14px;flex-
             <div class="fb" id="jpfb" aria-live="polite"></div>
           </div>
           <a class="btn primary go" href="https://n5-particle-drill.vercel.app/" target="_blank" rel="noopener">Open N5 Drill →</a>
-          <span class="note">Sign-in required. Ask me for access.</span>
+          <span class="note">Sign-in required. The screens above are from the full app. Ask me for access.</span>
         </div>
       </article>
 
@@ -267,13 +288,21 @@ footer .links{display:flex;justify-content:center;gap:12px;margin-top:14px;flex-
           <h3>CCAR Study Hub</h3>
           <p>My study kit for the Claude Certified Architect exam: a daily plan, notes, flashcards, timed mock exams and domain drills, all built around how I learn.</p>
           <p class="made"><span><b>My part:</b> designed and built for my own exam prep, with Claude as my coding partner.</span></p>
+          <div class="shots" data-slides>
+            <div class="slides" role="region" aria-roledescription="carousel" aria-label="CCAR Study Hub screens">
+              <div class="track"><figure><a href="/shots/ccar-plan.webp" target="_blank" rel="noopener" aria-label="Open full size: CCAR Study Hub plan: daily study hour plus a timed mock, with progress"><img src="/shots/ccar-plan.webp" alt="CCAR Study Hub plan: daily study hour plus a timed mock, with progress" loading="lazy" width="1200" height="700"></a><figcaption>A day-by-day plan to exam day</figcaption></figure><figure><a href="/shots/ccar-flashcard.webp" target="_blank" rel="noopener" aria-label="Open full size: CCAR Study Hub flashcard showing a question and its answer"><img src="/shots/ccar-flashcard.webp" alt="CCAR Study Hub flashcard showing a question and its answer" loading="lazy" width="1200" height="700"></a><figcaption>Requirement → mechanism flashcards</figcaption></figure><figure><a href="/shots/ccar-mocks.webp" target="_blank" rel="noopener" aria-label="Open full size: CCAR Study Hub mock exams: six 63-question, 120-minute papers"><img src="/shots/ccar-mocks.webp" alt="CCAR Study Hub mock exams: six 63-question, 120-minute papers" loading="lazy" width="1200" height="700"></a><figcaption>Six timed mock exams</figcaption></figure></div>
+              <button class="nav prev" type="button" aria-label="Previous screen">‹</button>
+              <button class="nav next" type="button" aria-label="Next screen">›</button>
+            </div>
+            <div class="dots"></div>
+          </div>
           <div class="demo">
             <span class="lbl">Try it: tap the card</span>
             <div class="flip" id="flip" role="button" tabindex="0" aria-label="Flashcard, tap to flip"><div class="inner"><div class="face front" id="ffront"></div><div class="face back" id="fback"></div></div></div>
             <div class="flip-row"><span class="note" id="fcount"></span><button class="flip-btn" id="fnext" type="button">Next card</button></div>
           </div>
           <a class="btn primary go" href="https://ccar-study-hub.vercel.app/" target="_blank" rel="noopener">Open Study Hub →</a>
-          <span class="note">Private study material. Sign-in required.</span>
+          <span class="note">Private study material, so sign-in is required. The screens above are from the full app.</span>
         </div>
       </article>
 
@@ -342,6 +371,19 @@ let qi=0;function showQ(){const q=qs[qi];$('#jpq').innerHTML=q.s.map(p=>p==='___
  const o=$('#jpopts');o.innerHTML='';q.o.forEach(c=>{const b=document.createElement('button');b.className='qopt';b.type='button';b.textContent=c;b.onclick=()=>{
   const ok=c===q.a;b.classList.add(ok?'ok':'no');if(ok){$('#jpq .blank').textContent=c;$('#jpfb').textContent='正解! '+q.en+' '+q.why;setTimeout(()=>{qi=(qi+1)%qs.length;showQ()},3200)}else $('#jpfb').textContent='Not quite, try again.'};o.appendChild(b)})}
 showQ();
+
+// screen slideshows: arrows, dots, swipe; auto-advance only when motion is welcome and nobody is interacting
+document.querySelectorAll('[data-slides]').forEach(box=>{
+ const track=box.querySelector('.track'),figs=[...track.children],dots=box.querySelector('.dots');let i=0,timer=null;
+ figs.forEach((_,k)=>{const d=document.createElement('button');d.type='button';d.setAttribute('aria-label','Screen '+(k+1)+' of '+figs.length);d.onclick=()=>{go(k);stop()};dots.appendChild(d)});
+ function go(k){i=(k+figs.length)%figs.length;track.style.transform=`translateX(-${i*100}%)`;figs.forEach((f,n)=>f.setAttribute('aria-hidden',n!==i));[...dots.children].forEach((d,n)=>d.setAttribute('aria-current',n===i))}
+ const stop=()=>{clearInterval(timer);timer=null};
+ box.querySelector('.prev').onclick=()=>{go(i-1);stop()};box.querySelector('.next').onclick=()=>{go(i+1);stop()};
+ let x0=null;track.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+ track.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40){go(i+(dx<0?1:-1));stop()}x0=null});
+ if(!reduce){timer=setInterval(()=>go(i+1),4500);box.addEventListener('mouseenter',stop);box.addEventListener('focusin',stop)}
+ go(0);
+});
 
 // flashcards
 const cards=[['What is an agentic loop?','The model plans, calls a tool, reads the result and decides the next step, until the task is done.'],
