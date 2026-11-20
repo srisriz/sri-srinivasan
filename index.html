@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sri Srinivasan · Technical Programme Leader</title>
 <meta name="description" content="Sri Srinivasan: technical programme leader across Apple Music, Amazon Prime Video and Ocado, now building agentic AI tools.">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sri-srinivasan.vercel.app/">
+<meta property="og:title" content="Sri Srinivasan · Technical Programme Leader">
+<meta property="og:description" content="I lead complex technology programmes and turn AI ideas into working products. Apple Music, Amazon Prime Video, Ocado.">
+<meta property="og:image" content="https://sri-srinivasan.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sri Srinivasan, Technical Programme Leader">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
@@ -32,14 +44,16 @@ nav.top{position:sticky;top:0;z-index:10;display:flex;justify-content:space-betw
 .navlinks a:hover{color:var(--ink);background:var(--card)}
 #theme{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;width:38px;height:38px;cursor:pointer;font-size:1rem}
 main{max-width:1100px;margin:0 auto;padding:0 16px}
-section{padding:72px 0}
+section{padding:72px 0;scroll-margin-top:64px}
+.skip{position:absolute;left:12px;top:-60px;z-index:20;background:var(--pink);color:#fff;font-weight:600;padding:10px 14px;border-radius:10px;text-decoration:none}
+.skip:focus{top:12px}
+main:focus{outline:none}
 .hero{min-height:82vh;display:flex;flex-direction:column;justify-content:center;gap:22px}
 .eyebrow{font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;color:var(--cyan)}
 h1{font-family:var(--display);font-size:clamp(2.4rem,7vw,5rem);line-height:1.02;margin:0;letter-spacing:-.02em}
-h1 .grad{background:linear-gradient(90deg,var(--pink),var(--cyan) 50%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shine 6s linear infinite}
-@keyframes shine{to{background-position:200% center}}
-.rotator{font-family:var(--display);font-size:clamp(1.2rem,3vw,1.8rem);color:var(--muted);min-height:1.4em}
-.rotator b{color:var(--ink);border-right:3px solid var(--cyan);padding-right:4px}
+h1 .grad{background:linear-gradient(90deg,var(--pink),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.now{font-family:var(--display);font-size:clamp(1.1rem,2.6vw,1.5rem);color:var(--muted);margin:0}
+.now b{color:var(--ink)}
 .lead{max-width:640px;font-size:1.1rem;color:var(--muted);margin:0}
 .ctas{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;text-decoration:none;padding:12px 20px;border-radius:999px;border:1px solid var(--line);background:var(--card);transition:transform .2s,box-shadow .2s}
@@ -57,16 +71,15 @@ h2{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 8px;
 .appstat b{font-family:var(--display);font-size:2.4rem;line-height:1;color:var(--amber)}
 .appstat span{color:var(--muted)}
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
-.skill{all:unset;box-sizing:border-box;cursor:pointer;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:8px;padding:22px;border-radius:20px;background:var(--card);border:1px solid var(--line);backdrop-filter:blur(8px);min-height:210px;transition:transform .25s,border-color .25s,box-shadow .25s}
+.skill{box-sizing:border-box;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:8px;padding:22px;border-radius:20px;background:var(--card);border:1px solid var(--line);backdrop-filter:blur(8px);min-height:210px;transition:transform .25s,border-color .25s,box-shadow .25s}
 .skill::before{content:"";position:absolute;inset:auto -30% -60% auto;width:180px;height:180px;border-radius:50%;background:var(--c);opacity:.18;filter:blur(30px);transition:opacity .3s,transform .4s}
-.skill:hover,.skill.open{transform:translateY(-4px);border-color:var(--c);box-shadow:0 18px 40px -22px var(--c)}
-.skill:hover::before,.skill.open::before{opacity:.4;transform:scale(1.4)}
-.skill:focus-visible{outline:2px solid var(--c);outline-offset:3px}
+.skill:hover{border-color:var(--c);box-shadow:0 18px 40px -22px var(--c)}
+.skill:hover::before{opacity:.4;transform:scale(1.4)}
 .skill .ico{font-size:1.8rem}
 .skill h3{margin:0;font-family:var(--display);font-size:1.2rem;color:var(--c)}
 .skill .what{margin:0;font-weight:500}
-.skill .proof{margin:0;color:var(--muted);font-size:.92rem;max-height:0;opacity:0;overflow:hidden;transition:max-height .4s,opacity .4s}
-.skill:hover .proof,.skill.open .proof{max-height:160px;opacity:1}
+.skill .proof{margin:0;color:var(--muted);font-size:.92rem;padding-top:8px;border-top:1px solid var(--line)}
+.skill .proof b{color:var(--ink);font-weight:600}
 .li-pill{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:600;font-size:.88rem;padding:7px 12px;border-radius:999px;background:#0a66c2;color:#fff!important}
 .li-pill:hover{background:#004182}
 .li-btn{border-color:#0a66c2}
@@ -74,11 +87,14 @@ h2{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 8px;
 /* timeline */
 .timeline{display:flex;flex-direction:column;gap:12px;position:relative}
 .role{border:1px solid var(--line);background:var(--card);border-radius:18px;overflow:hidden;backdrop-filter:blur(8px)}
-.role button{all:unset;cursor:pointer;display:grid;grid-template-columns:14px 1fr auto;gap:16px;align-items:center;width:100%;box-sizing:border-box;padding:18px 20px}
+.role button{all:unset;cursor:pointer;display:grid;grid-template-columns:14px 1fr auto 18px;gap:16px;align-items:center;width:100%;box-sizing:border-box;padding:18px 20px}
 .role button:focus-visible{outline:2px solid var(--cyan);outline-offset:-2px;border-radius:18px}
 .dot{width:14px;height:14px;border-radius:50%;background:var(--c);box-shadow:0 0 0 5px color-mix(in srgb,var(--c) 25%,transparent)}
 .role h3{margin:0;font-family:var(--display);font-size:1.15rem}
 .role .org{color:var(--muted);font-size:.92rem}
+.role .outcome{display:block;margin-top:4px;font-size:.92rem;color:var(--ink);opacity:.85}
+.chev{width:18px;height:18px;color:var(--muted);transition:transform .3s}
+.role.open .chev{transform:rotate(90deg);color:var(--c)}
 .when{font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
 .role .detail{max-height:0;overflow:hidden;transition:max-height .4s ease;padding:0 20px 0 50px}
 .role.open .detail{max-height:200px;padding-bottom:18px}
@@ -95,6 +111,8 @@ h2{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 8px;
 .demo{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px;min-height:190px}
 .demo .lbl{font-size:.75rem;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
 .go{margin-top:auto;align-self:flex-start}
+.made{margin:0;font-size:.88rem;color:var(--muted);display:grid;gap:4px}
+.made b{color:var(--ink);font-weight:600}
 .note{font-size:.8rem;color:var(--muted)}
 /* shopping demo */
 .shopform{display:flex;gap:8px}
@@ -107,7 +125,7 @@ h2{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 8px;
 @keyframes pop{from{transform:scale(.3);opacity:0}}
 /* jp quiz */
 .jp{font-family:"Noto Sans JP",sans-serif;font-weight:700}
-.sentence{font-size:1.5rem;text-align:center}
+.sentence{font-size:clamp(1.15rem,2.2vw,1.35rem);text-align:center;line-height:1.7;padding:4px 0}
 .blank{display:inline-block;min-width:2em;border-bottom:3px solid var(--b);color:var(--b)}
 .qopts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 .qopt{font-family:"Noto Sans JP",sans-serif;font-size:1.2rem;min-width:56px;background:var(--card);color:var(--ink);border:1px solid var(--line)}
@@ -122,19 +140,21 @@ h2{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 8px;
 .flip.flipped .front{transform:rotateY(-180deg)}.flip.flipped .back{transform:rotateY(0)}
 .flip-row{display:flex;justify-content:space-between;align-items:center;gap:8px}
 /* about strip */
-.marquee{overflow:hidden;border-block:1px solid var(--line);padding:16px 0;margin:20px 0}
-.marquee div{display:flex;gap:40px;width:max-content;animation:scroll 30s linear infinite;font-family:var(--display);font-size:1.3rem;color:var(--muted)}
-.marquee span::before{content:"✦ ";color:var(--cyan)}
-@keyframes scroll{to{transform:translateX(-50%)}}
+.tags{display:flex;flex-wrap:wrap;gap:10px 28px;border-block:1px solid var(--line);padding:16px 0;margin:20px 0;font-family:var(--display);font-size:1.05rem;color:var(--muted)}
+.tags span::before{content:"✦ ";color:var(--cyan)}
 footer{text-align:center;padding:48px 16px 64px;color:var(--muted)}
+.welcome{list-style:none;padding:0;margin:0 auto 28px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.welcome li{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 14px;font-weight:500}
+.welcome li b{color:var(--cyan);margin-right:6px}
 footer .links{display:flex;justify-content:center;gap:12px;margin-top:14px;flex-wrap:wrap}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
 .reveal.in{opacity:1;transform:none}
-@media (max-width:620px){.navlinks a.hide-sm,.navlinks a[href="#build"]{display:none}.logo{white-space:nowrap}.role button{grid-template-columns:14px 1fr}.when{grid-column:2}.role .detail{padding-left:20px}.shops{grid-template-columns:1fr}}
+@media (max-width:620px){.navlinks a.hide-sm,.navlinks a[href="#build"]{display:none}.logo{white-space:nowrap}.role button{grid-template-columns:14px 1fr 18px;row-gap:4px}.when{grid-column:2;grid-row:2}.chev{grid-column:3;grid-row:1}.role .detail{padding-left:20px}.shops{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
+<a class="skip" href="#top">Skip to content</a>
 <div class="blobs" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <div class="cursor-glow" id="glow" aria-hidden="true"></div>
 
@@ -150,53 +170,52 @@ footer .links{display:flex;justify-content:center;gap:12px;margin-top:14px;flex-
   </div>
 </nav>
 
-<main id="top">
+<main id="top" tabindex="-1">
   <section class="hero">
     <span class="eyebrow">Technical Programme Leader · London</span>
     <h1>I turn fuzzy ideas into <span class="grad">things that ship.</span></h1>
-    <div class="rotator" aria-live="polite">Lately I've been <b id="rot">building with AI</b></div>
-    <p class="lead">15+ years leading complex technology programmes at Apple Music, Amazon Prime Video and Ocado. Now I build small, useful AI-powered apps, and help teams put AI to work safely.</p>
+    <p class="lead">I lead complex technology programmes and turn AI ideas into working products. 15+ years delivering platforms, launches and change at Apple Music, Amazon Prime Video and Ocado, across global teams.</p>
+    <p class="now">Now: <b>shaping an agentic AI platform</b> for regulated organisations, and building my own AI apps.</p>
     <div class="ctas">
       <a class="btn primary" href="#build">See what I've built →</a>
       <a class="btn" href="#career">My career</a>
       <a class="btn li-btn" href="https://www.linkedin.com/in/srizz" target="_blank" rel="noopener">Connect on LinkedIn ↗</a>
     </div>
-    <a class="appstat reveal" href="#build"><b data-count="3" data-suffix="">0</b><span>Recent AI Apps Live. Try them below →</span></a>
+    <a class="appstat reveal" href="#build"><b>3</b><span>apps I've built with AI and shipped. Try them below →</span></a>
   </section>
 
-  <div class="marquee" aria-hidden="true"><div>
-    <span>Programme leadership</span><span>Platform migrations</span><span>Customer launches</span><span>Agentic AI</span><span>Rapid prototyping</span><span>Mechanisms that outlast me</span>
-    <span>Programme leadership</span><span>Platform migrations</span><span>Customer launches</span><span>Agentic AI</span><span>Rapid prototyping</span><span>Mechanisms that outlast me</span>
-  </div></div>
+  <div class="tags">
+    <span>Programme leadership</span><span>Platform migrations</span><span>Customer launches</span><span>Agentic AI</span><span>Rapid prototyping</span><span>Delivery practices teams keep using</span>
+  </div>
 
   <section id="skills">
     <h2 class="reveal">What I bring</h2>
-    <p class="sub reveal">Hover or tap a card to see it in action.</p>
+    <p class="sub reveal">Each with one example of it in practice.</p>
     <div class="skills">
-      <button class="skill reveal" style="--c:var(--pink)" type="button" aria-expanded="false"><span class="ico">🧩</span><h3>Problem solving</h3><p class="what">Making messy, ambiguous problems clear enough to act on.</p><p class="proof">At Ocado, I sorted ~250 APIs into "works", "needs adapting" and "missing". A vague worry became a clear plan, and the method became standard for every new retailer.</p></button>
-      <button class="skill reveal" style="--c:var(--violet)" type="button" aria-expanded="false"><span class="ico">🚀</span><h3>Product development</h3><p class="what">From first concept to something real people use.</p><p class="proof">I took a knowledge platform from a free proof of concept to live use at two UK banks, and I've since built three AI apps of my own.</p></button>
-      <button class="skill reveal" style="--c:var(--cyan)" type="button" aria-expanded="false"><span class="ico">🤝</span><h3>Client engagement</h3><p class="what">Becoming the partner customers trust to get it done.</p><p class="proof">I helped a Canadian grocer launch one of the country's first online grocery services, on the date that had been promised.</p></button>
-      <button class="skill reveal" style="--c:var(--lime)" type="button" aria-expanded="false"><span class="ico">🗺️</span><h3>Roadmap & strategy</h3><p class="what">Choosing what matters most, and what to say no to.</p><p class="proof">At Apple, I made the case to pause new features and fix our platform. Services ended up roughly 70% faster.</p></button>
-      <button class="skill reveal" style="--c:var(--amber)" type="button" aria-expanded="false"><span class="ico">⚙️</span><h3>Programme leadership</h3><p class="what">Keeping many teams moving towards one outcome.</p><p class="proof">I've led programmes across four countries and set up delivery routines at Amazon that other teams adopted.</p></button>
-      <button class="skill reveal" style="--c:var(--pink)" type="button" aria-expanded="false"><span class="ico">✨</span><h3>AI in practice</h3><p class="what">Using AI to build, prototype and move faster.</p><p class="proof">I design and ship working AI apps in days, and help shape an agentic AI platform for regulated organisations.</p></button>
+      <article class="skill reveal" style="--c:var(--pink)"><span class="ico" aria-hidden="true">🧩</span><h3>Problem solving</h3><p class="what">Making messy, ambiguous problems clear enough to act on.</p><p class="proof">At Ocado, I sorted ~250 APIs into "works", "needs adapting" and "missing". A vague worry became a clear plan, and the method became standard for every new retailer.</p></article>
+      <article class="skill reveal" style="--c:var(--violet)"><span class="ico" aria-hidden="true">🚀</span><h3>Product development</h3><p class="what">From first concept to something real people use.</p><p class="proof">I took a knowledge platform from a free proof of concept to live use at two UK banks, and I've since built three AI apps of my own.</p></article>
+      <article class="skill reveal" style="--c:var(--cyan)"><span class="ico" aria-hidden="true">🤝</span><h3>Client engagement</h3><p class="what">Becoming the partner customers trust to get it done.</p><p class="proof">I helped a Canadian grocer launch one of the country's first online grocery services, on the date that had been promised.</p></article>
+      <article class="skill reveal" style="--c:var(--lime)"><span class="ico" aria-hidden="true">🗺️</span><h3>Roadmap & strategy</h3><p class="what">Choosing what matters most, and what to say no to.</p><p class="proof">At Apple, I made the case to pause new features and fix our platform. Services ended up roughly 70% faster.</p></article>
+      <article class="skill reveal" style="--c:var(--amber)"><span class="ico" aria-hidden="true">⚙️</span><h3>Programme leadership</h3><p class="what">Keeping many teams moving towards one outcome.</p><p class="proof">I've led programmes across four countries and set up delivery routines at Amazon that other teams adopted.</p></article>
+      <article class="skill reveal" style="--c:var(--pink)"><span class="ico" aria-hidden="true">✨</span><h3>AI in practice</h3><p class="what">Using AI to build, prototype and move faster.</p><p class="proof">I design and ship working AI apps in days, and help shape an agentic AI platform for regulated organisations.</p></article>
     </div>
   </section>
 
   <section id="career">
     <h2 class="reveal">Career at a glance</h2>
-    <p class="sub reveal">Tap a role to see the highlight.</p>
+    <p class="sub reveal">Tap a role for more detail.</p>
     <div class="timeline">
-      <div class="role reveal" style="--c:var(--lime)"><button aria-expanded="false"><span class="dot"></span><span><h3>Product Consultant, Agentic AI</h3><span class="org">enMorf · 1Tellect</span></span><span class="when">2026 – now</span></button>
+      <div class="role reveal" style="--c:var(--lime)"><button aria-expanded="false"><span class="dot"></span><span><h3>Product Consultant, Agentic AI</h3><span class="org">enMorf · 1Tellect</span><span class="outcome">Governed, auditable AI workflows for regulated organisations.</span></span><span class="when">2026 – now</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg></button>
         <div class="detail"><p>Shaping an agentic AI platform that helps regulated organisations turn their knowledge into governed, auditable AI workflows.</p><span class="chip">Agentic AI</span><span class="chip">Product strategy</span></div></div>
-      <div class="role reveal" style="--c:var(--pink)"><button aria-expanded="false"><span class="dot"></span><span><h3>Technical Program Manager</h3><span class="org">Apple Music</span></span><span class="when">2022 – 2026</span></button>
+      <div class="role reveal" style="--c:var(--pink)"><button aria-expanded="false"><span class="dot"></span><span><h3>Technical Program Manager</h3><span class="org">Apple Music</span><span class="outcome">40+ applications moved to the edge, for up to 80% faster responses.</span></span><span class="when">2022 – 2026</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg></button>
         <div class="detail"><p>Led platform, infrastructure and data programmes across four countries, including moving 40+ applications to edge locations for up to 80% faster responses.</p><span class="chip">Platform</span><span class="chip">Data</span><span class="chip">Global teams</span></div></div>
-      <div class="role reveal" style="--c:var(--cyan)"><button aria-expanded="false"><span class="dot"></span><span><h3>Senior Technical Program Manager</h3><span class="org">Amazon Prime Video</span></span><span class="when">2021 – 2022</span></button>
-        <div class="detail"><p>Ran engineering programmes for Prime Video's Watch and Buy experience. The delivery routines I set up became standard practice across teams.</p><span class="chip">Consumer scale</span><span class="chip">Mechanisms</span></div></div>
-      <div class="role reveal" style="--c:var(--amber)"><button aria-expanded="false"><span class="dot"></span><span><h3>Solution Architect & Product Launch Manager</h3><span class="org">Ocado Solutions</span></span><span class="when">2018 – 2021</span></button>
+      <div class="role reveal" style="--c:var(--cyan)"><button aria-expanded="false"><span class="dot"></span><span><h3>Senior Technical Program Manager</h3><span class="org">Amazon Prime Video</span><span class="outcome">Delivery routines that became standard practice across teams.</span></span><span class="when">2021 – 2022</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg></button>
+        <div class="detail"><p>Ran engineering programmes for Prime Video's Watch and Buy experience. The delivery routines I set up became standard practice across teams.</p><span class="chip">Consumer scale</span><span class="chip">Delivery practices</span></div></div>
+      <div class="role reveal" style="--c:var(--amber)"><button aria-expanded="false"><span class="dot"></span><span><h3>Solution Architect & Product Launch Manager</h3><span class="org">Ocado Solutions</span><span class="outcome">Helped launch one of Canada's first online grocery services.</span></span><span class="when">2018 – 2021</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg></button>
         <div class="detail"><p>Helped launch one of Canada's first online grocery services. My gap-analysis and launch processes became standard for every new retailer.</p><span class="chip">Customer launches</span><span class="chip">Retail</span></div></div>
-      <div class="role reveal" style="--c:var(--violet)"><button aria-expanded="false"><span class="dot"></span><span><h3>Technical Account & Delivery Manager</h3><span class="org">Portaltech Reply</span></span><span class="when">2015 – 2017</span></button>
+      <div class="role reveal" style="--c:var(--violet)"><button aria-expanded="false"><span class="dot"></span><span><h3>Technical Account & Delivery Manager</h3><span class="org">Portaltech Reply</span><span class="outcome">E-commerce delivery for Costco and Iceland Foods, a ~£2.5m portfolio.</span></span><span class="when">2015 – 2017</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg></button>
         <div class="detail"><p>Delivered e-commerce platforms for clients including Costco and Iceland Foods, managing a portfolio of about £2.5m.</p><span class="chip">Clients</span><span class="chip">Commercial</span></div></div>
-      <div class="role reveal" style="--c:var(--pink)"><button aria-expanded="false"><span class="dot"></span><span><h3>Programme Manager & Consultant</h3><span class="org">Amsphere</span></span><span class="when">Earlier</span></button>
+      <div class="role reveal" style="--c:var(--pink)"><button aria-expanded="false"><span class="dot"></span><span><h3>Programme Manager & Consultant</h3><span class="org">Amsphere</span><span class="outcome">A free proof of concept grown into a multi-million-pound relationship with two UK banks.</span></span><span class="when">Earlier</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg></button>
         <div class="detail"><p>Built a knowledge platform from a free proof of concept into a multi-million-pound relationship with two UK banks.</p><span class="chip">Product build</span><span class="chip">Banking</span></div></div>
     </div>
   </section>
@@ -211,8 +230,9 @@ footer .links{display:flex;justify-content:center;gap:12px;margin-top:14px;flex-
           <span class="badge">Agentic AI · WhatsApp</span>
           <h3>ShoppingSync</h3>
           <p>A family shopping list that lives in WhatsApp. Everyone types what they need, in their own words, and an AI agent sorts each item under the right shop.</p>
+          <p class="made"><span><b>My part:</b> product design and build, with Claude as my coding partner.</span><span><b>AI inside:</b> reads free-form messages in English, Tanglish or Hinglish, follows the conversation, and asks before acting on a guess.</span></p>
           <div class="demo">
-            <span class="lbl">Try it: add an item</span>
+            <span class="lbl">Try a simplified preview: add an item</span>
             <form class="shopform" id="shopform"><label class="sr" for="shopin" style="position:absolute;left:-9999px">Item</label><input id="shopin" placeholder="e.g. paneer, light bulbs, bread" autocomplete="off"><button>Add</button></form>
             <div class="shops">
               <div class="shop"><strong>🥬 Supermarket</strong><span id="s-super"></span></div>
@@ -220,7 +240,7 @@ footer .links{display:flex;justify-content:center;gap:12px;margin-top:14px;flex-
               <div class="shop"><strong>🔧 Hardware</strong><span id="s-hard"></span></div>
             </div>
           </div>
-          <a class="btn primary go" href="https://shopping-sync.vercel.app/use-me" target="_blank" rel="noopener">See how it works →</a>
+          <a class="btn primary go" href="https://shopping-sync.vercel.app/use-me#try" target="_blank" rel="noopener">Try the real bot →</a>
         </div>
       </article>
 
@@ -229,6 +249,7 @@ footer .links{display:flex;justify-content:center;gap:12px;margin-top:14px;flex-
           <span class="badge">Learning · Japanese</span>
           <h3>N5 Drill</h3>
           <p>A JLPT N5 practice app covering kana, kanji, vocabulary, particles, grammar, reading and listening, with progress tracking and a shared leaderboard.</p>
+          <p class="made"><span><b>My part:</b> designed and built around how I study, with Claude as my coding partner.</span></p>
           <div class="demo">
             <span class="lbl">Try it: pick the particle</span>
             <div class="sentence jp" lang="ja" id="jpq"></div>
@@ -245,6 +266,7 @@ footer .links{display:flex;justify-content:center;gap:12px;margin-top:14px;flex-
           <span class="badge">Learning · AI architecture</span>
           <h3>CCAR Study Hub</h3>
           <p>My study kit for the Claude Certified Architect exam: a daily plan, notes, flashcards, timed mock exams and domain drills, all built around how I learn.</p>
+          <p class="made"><span><b>My part:</b> designed and built for my own exam prep, with Claude as my coding partner.</span></p>
           <div class="demo">
             <span class="lbl">Try it: tap the card</span>
             <div class="flip" id="flip" role="button" tabindex="0" aria-label="Flashcard, tap to flip"><div class="inner"><div class="face front" id="ffront"></div><div class="face back" id="fback"></div></div></div>
@@ -260,7 +282,13 @@ footer .links{display:flex;justify-content:center;gap:12px;margin-top:14px;flex-
 
   <section id="contact" class="reveal" style="text-align:center">
     <h2>Let's talk</h2>
-    <p class="sub" style="margin-inline:auto">Looking for someone who can lead complex technology delivery, stay close to customers and put AI to real use? I'd love to hear from you.</p>
+    <p class="sub" style="margin-inline:auto">I'm always happy to connect. These are the conversations I'd most like to have:</p>
+    <ol class="welcome">
+      <li><b>1</b>Networking and introductions</li>
+      <li><b>2</b>Programme leadership roles</li>
+      <li><b>3</b>Client-facing delivery</li>
+      <li><b>4</b>AI product consulting</li>
+    </ol>
     <div class="ctas" style="justify-content:center">
       <a class="btn primary" href="https://www.linkedin.com/in/srizz" target="_blank" rel="noopener">Connect on LinkedIn</a>
       <a class="btn" href="https://github.com/srisriz" target="_blank" rel="noopener">GitHub</a>
@@ -284,16 +312,11 @@ $('#theme').onclick=()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':
 // cursor glow
 const glow=$('#glow');addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
 
-// rotator
-const words=['building with AI','shipping prototypes','learning Japanese','studying for CCAR-P','solving delivery puzzles'];
-let wi=0;if(!reduce)setInterval(()=>{wi=(wi+1)%words.length;const b=$('#rot');let t=words[wi],i=0;b.textContent='';const iv=setInterval(()=>{b.textContent=t.slice(0,++i);if(i>=t.length)clearInterval(iv)},45)},2800);
 
 // reveal + counters
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');const n=e.target.querySelector('[data-count]');if(n&&!n.done){n.done=1;const end=+n.dataset.count,suf=n.dataset.suffix;let s=null;const step=t=>{s??=t;const p=Math.min(1,(t-s)/1200);n.textContent=Math.round(end*(1-Math.pow(1-p,3)))+suf;if(p<1)requestAnimationFrame(step)};reduce?n.textContent=end+suf:requestAnimationFrame(step)}io.unobserve(e.target)}),{threshold:.15});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');io.unobserve(e.target)}),{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// skills tap
-document.querySelectorAll('.skill').forEach(s=>s.onclick=()=>{const o=!s.classList.contains('open');s.classList.toggle('open',o);s.setAttribute('aria-expanded',o)});
 // timeline
 document.querySelectorAll('.role button').forEach(b=>b.onclick=()=>{const r=b.parentElement,open=!r.classList.contains('open');r.classList.toggle('open',open);b.setAttribute('aria-expanded',open)});
 document.querySelector('.role').classList.add('open');document.querySelector('.role button').setAttribute('aria-expanded','true');
@@ -310,14 +333,14 @@ $('#shopform').onsubmit=e=>{e.preventDefault();const v=$('#shopin').value.trim()
  add(indian.some(k=>l.includes(k))?'#s-indian':hard.some(k=>l.includes(k))?'#s-hard':'#s-super',v);$('#shopin').value=''};
 
 // japanese demo
-const qs=[{s:['わたし','___','がくせいです。'],a:'は',o:['は','を','に','で'],en:'I am a student.'},
-{s:['パン','___','たべます。'],a:'を',o:['が','を','へ','と'],en:'I eat bread.'},
-{s:['がっこう','___','いきます。'],a:'へ',o:['を','で','へ','も'],en:'I go to school.'},
-{s:['としょかん','___','べんきょうします。'],a:'で',o:['に','で','を','は'],en:'I study at the library.'},
-{s:['ともだち','___','えいがをみます。'],a:'と',o:['と','を','が','の'],en:'I watch a film with a friend.'}];
+const qs=[{s:['わたし','___','がくせいです。'],a:'は',o:['は','を','に','で'],en:'I am a student.',why:'は marks the topic.'},
+{s:['パン','___','たべます。'],a:'を',o:['が','を','へ','と'],en:'I eat bread.',why:'を marks the object of the verb.'},
+{s:['がっこう','___','いきます。'],a:'へ',o:['を','で','へ','も'],en:'I go to school.',why:'へ marks the direction you go.'},
+{s:['としょかん','___','べんきょうします。'],a:'で',o:['に','で','を','は'],en:'I study at the library.',why:'で marks where an action happens.'},
+{s:['ともだち','___','えいがをみます。'],a:'と',o:['と','を','が','の'],en:'I watch a film with a friend.',why:'と means "with" someone.'}];
 let qi=0;function showQ(){const q=qs[qi];$('#jpq').innerHTML=q.s.map(p=>p==='___'?'<span class="blank">　</span>':p).join('');$('#jpfb').textContent='';
  const o=$('#jpopts');o.innerHTML='';q.o.forEach(c=>{const b=document.createElement('button');b.className='qopt';b.type='button';b.textContent=c;b.onclick=()=>{
-  const ok=c===q.a;b.classList.add(ok?'ok':'no');if(ok){$('#jpq .blank').textContent=c;$('#jpfb').textContent='正解! '+q.en;setTimeout(()=>{qi=(qi+1)%qs.length;showQ()},1600)}else $('#jpfb').textContent='Not quite, try again.'};o.appendChild(b)})}
+  const ok=c===q.a;b.classList.add(ok?'ok':'no');if(ok){$('#jpq .blank').textContent=c;$('#jpfb').textContent='正解! '+q.en+' '+q.why;setTimeout(()=>{qi=(qi+1)%qs.length;showQ()},3200)}else $('#jpfb').textContent='Not quite, try again.'};o.appendChild(b)})}
 showQ();
 
 // flashcards
